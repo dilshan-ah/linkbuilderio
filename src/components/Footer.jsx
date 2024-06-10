@@ -89,7 +89,7 @@ const Footer = () => {
                     <div className='xl:px-10 pb-3'>
                         <ul>
                             <li>
-                                <a href="#" className='pb-0.5 menu-anime text-2xl mb-3' style={{ fontFamily: 'Lato', }}>How we work</a>
+                                <Link to="/how-we-work" className='pb-0.5 menu-anime text-2xl mb-3' style={{ fontFamily: 'Lato', }}>How we work</Link>
                             </li>
 
                             <li>
@@ -97,7 +97,7 @@ const Footer = () => {
                             </li>
 
                             <li>
-                                <a href="#" className='pb-0.5 menu-anime text-2xl mb-3' style={{ fontFamily: 'Lato', }}>Contact Us</a>
+                                <Link to="/contact" className='pb-0.5 menu-anime text-2xl mb-3' style={{ fontFamily: 'Lato', }}>Contact Us</Link>
                             </li>
                         </ul>
                     </div>
@@ -109,11 +109,11 @@ const Footer = () => {
                             </li>
 
                             <li>
-                                <a href="#" className='pb-0.5 menu-anime text-2xl mb-3' style={{ fontFamily: 'Lato', }}>Pricing</a>
+                                <Link to="/pricing" className='pb-0.5 menu-anime text-2xl mb-3' style={{ fontFamily: 'Lato', }}>Pricing</Link>
                             </li>
 
                             <li>
-                                <a href="#" className='pb-0.5 menu-anime text-2xl mb-3' style={{ fontFamily: 'Lato', }}>Link Building Blog</a>
+                                <Link to="/linkbuilding-blog" className='pb-0.5 menu-anime text-2xl mb-3' style={{ fontFamily: 'Lato', }}>Link Building Blog</Link>
                             </li>
                         </ul>
                     </div>

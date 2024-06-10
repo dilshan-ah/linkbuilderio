@@ -77,11 +77,11 @@ const Navbar = () => {
                 {
                     isSticky ?
                         <div className='xl:col-span-3 col-span-7 flex gap-3 justify-end'>
-                            <Link to='/contact' className="button-one capitalize py-1.5 px-4 !font-semibold flex items-center">
+                            <Link to='/contact' className="button-one capitalize py-1.5 px-4 !font-semibold md:flex hidden items-center">
                                 👉 Message Us
                             </Link>
 
-                            <button className="button-two capitalize py-1.5 px-4 !font-semibold flex items-center">
+                            <button className="button-two capitalize py-1.5 px-4 !font-semibold md:flex hidden items-center">
                                 📞 Book a call
                             </button>
 

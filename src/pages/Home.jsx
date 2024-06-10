@@ -27,6 +27,7 @@ import BlogSlider from '../components/BlogSlider'
 import Footer from '../components/Footer'
 import MobileMenu from '../components/MobileMenu'
 import { DataContext } from '../context/Context'
+import { Link } from 'react-router-dom'
 
 
 
@@ -48,13 +49,13 @@ const Home = () => {
                     <p className='text-lg mb-10'>We’re a specialist link building agency that builds<strong> incredible backlinks</strong> to improve your search engine rankings.</p>
 
                     <div className='col-span-3 flex gap-3 justify-start'>
-                        <button className="button-one capitalize py-1.5 px-4 !font-semibold flex items-center">
+                        <a href='https://client-linkbuilder.stylenestbd.com/' className="button-one capitalize py-1.5 px-4 !font-semibold flex items-center">
                             Access Dashboard
-                        </button>
+                        </a>
 
-                        <button className="button-two capitalize py-1.5 px-4 !font-semibold flex items-center">
+                        <Link to="/contact" className="button-two capitalize py-1.5 px-4 !font-semibold flex items-center">
                             👉 Get in Touch
-                        </button>
+                        </Link>
                     </div>
 
                 </div>
