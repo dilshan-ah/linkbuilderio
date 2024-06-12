@@ -85,7 +85,7 @@ const Footer = () => {
                     <p class="text-xs">Copyright © <time datetime="2024">2024</time> LinkBuilder.io. All rights reserved.</p>
                 </div>
 
-                <div className='xl:col-span-2 col-span-4 grid grid-cols-3 xl:py-0 py-10'>
+                <div className='xl:col-span-2 col-span-4 grid md:grid-cols-3 grid-cols-1 xl:py-0 py-10'>
                     <div className='xl:px-10 pb-3'>
                         <ul>
                             <li>

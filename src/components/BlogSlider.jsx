@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,8 +10,11 @@ import 'swiper/css/navigation';
 
 import { FreeMode, Navigation } from 'swiper/modules';
 import BlogCard from './BlogCard';
+import { DataContext } from '../context/Context';
 
 const BlogSlider = () => {
+
+  const { allBlog } = useContext(DataContext)
   return (
     <>
       <Swiper
@@ -21,7 +24,7 @@ const BlogSlider = () => {
         grabCursor={true}
         navigation={true}
         breakpoints={{
-          
+
           0: {
             slidesPerView: 2,
           },
@@ -35,21 +38,12 @@ const BlogSlider = () => {
         modules={[FreeMode, Navigation]}
         className="mySwiper pl-20"
       >
-        <SwiperSlide>
-            <BlogCard/>
-        </SwiperSlide>
-        <SwiperSlide>
-            <BlogCard/>
-        </SwiperSlide>
-        <SwiperSlide>
-            <BlogCard/>
-        </SwiperSlide>
-        <SwiperSlide>
-            <BlogCard/>
-        </SwiperSlide>
-        <SwiperSlide>
-            <BlogCard/>
-        </SwiperSlide>
+        {allBlog?.map((blog, index) => (
+          <SwiperSlide key={index}>
+            <BlogCard blog={blog}/>
+          </SwiperSlide>
+        ))}
+
       </Swiper>
     </>
   )

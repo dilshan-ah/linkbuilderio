@@ -20,7 +20,7 @@ import linkbroker from '../assets/blog-03.webp'
 import otheragency from '../assets/blog-05.webp'
 
 const Pricing = () => {
-    const { mobileMenu } = useContext(DataContext)
+    const { mobileMenu, allPackage } = useContext(DataContext)
     return (
         <div className='relative'>
             <Helmet>
@@ -46,377 +46,52 @@ const Pricing = () => {
                 <div className='w-full bg-gray-50 py-10'>
                     <div className='container mx-auto px-8 grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10'>
 
-                        <div className='py-10'>
-                            <div className='bg-white lg:pt-16 lg:pb-12 pt-10 pb-8 relative rounded-3xl px-6 shadow-2xl h-full flex flex-col justify-between lg:px-8'>
-                                <div>
-                                    <h3 className="tracking-tight mb-1 text-md md:text-lg xl:text-xl text-medium">
-                                        🚀 Startup
-                                    </h3>
+                        {
+                            allPackage?.map((pack) => (
+                                <div className={`py-10 ${pack.popular == 1 && 'h-full'}`}>
+                                    <div className={`${pack.popular == 1 ? 'bg-[#00DA90]':'bg-white'} lg:pt-16 lg:pb-12 pt-10 pb-8 relative rounded-3xl px-6 shadow-2xl h-full flex flex-col justify-between lg:px-8`}>
+                                        <div>
+                                            <h3 className="tracking-tight mb-1 text-md md:text-lg xl:text-xl text-medium text-black">
+                                                {pack.name}
+                                            </h3>
 
-                                    <div className="inline-flex items-end">
-                                        <p>
-                                            <span className="text-2xl md:text-3xl xl:text-4xl green-highlight tracking-tighter font-semibold bg-transparent leading-tight">
-                                                $2999
-                                            </span>
-                                            <span className="ml-2 text-gray-700 ">
-                                                / Month
-                                            </span>
-                                        </p>
-                                    </div>
+                                            <div className="inline-flex items-end text-black">
+                                                <p>
+                                                    <span className="text-2xl md:text-3xl xl:text-4xl green-highlight tracking-tighter font-semibold bg-transparent leading-tight">
+                                                        ${pack.price}
+                                                    </span>
+                                                    <span className="ml-2 text-gray-700 ">
+                                                        / Month
+                                                    </span>
+                                                </p>
+                                            </div>
 
-                                    <div className='w-full border-t border-black border-opacity-20 pt-5 mt-5 mb-10"'>
-                                        <p className="block mb-4 text-xl pb-4 text-gray-900 font-normal"><strong>🔗 8+ Links Per Month</strong></p>
+                                            <div className='w-full border-t border-black border-opacity-20 pt-5 mt-5 mb-10"'>
+                                                <p className="block mb-4 text-xl pb-4 text-gray-900 font-normal"><strong>🔗 {pack.links_per_month}+ Links Per Month</strong></p>
 
-                                        <ul>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
+                                                <ul>
+                                                    {pack.items.map((item) => (
+                                                        <li className='flex items-center text-base font-semibold mb-2 text-black'>
+                                                            <div className='rounded-full bg-black p-1 mr-4'>
+                                                                <FaCheck className='text-sm text-white' />
+                                                            </div>
 
-                                                Average DR 50-90 Links
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
+                                                            {item.title}
+                                                        </li>
+                                                    ))}
 
-                                                Detailed Link Planning
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
+                                                </ul>
+                                            </div>
+                                        </div>
 
-                                                Competitor Backlink Gap Analysis
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
+                                        <div className='mt-10'>
+                                            <button class={`${pack.popular == 1 ? 'button-two':'button-three'} capitalize py-1.5 px-4 !font-semibold flex items-center justify-center w-full`}>📞 Book a call</button>
+                                        </div>
 
-                                                Keyword Analysis
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Custom Reporting Dashboard
-                                            </li>
-
-                                        </ul>
                                     </div>
                                 </div>
-
-                                <div className='mt-10'>
-                                    <button class="button-three capitalize py-1.5 px-4 !font-semibold flex items-center justify-center w-full">📞 Book a call</button>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div className='py-10'>
-                            <div className='bg-white lg:pt-16 lg:pb-12 pt-10 pb-8 relative rounded-3xl px-6 shadow-2xl h-full flex flex-col justify-between lg:px-8'>
-                                <div>
-                                    <h3 className="tracking-tight mb-1 text-md md:text-lg xl:text-xl text-medium">
-                                        🧠 Pro
-                                    </h3>
-
-                                    <div className="inline-flex items-end">
-                                        <p>
-                                            <span className="text-2xl md:text-3xl xl:text-4xl green-highlight tracking-tighter font-semibold bg-transparent leading-tight">
-                                                $5999
-                                            </span>
-                                            <span className="ml-2 text-gray-700 ">
-                                                / Month
-                                            </span>
-                                        </p>
-                                    </div>
-
-                                    <div className='w-full border-t border-black border-opacity-20 pt-5 mt-5 mb-10"'>
-                                        <p className="block mb-4 text-xl pb-4 text-gray-900 font-normal"><strong>🔗 16+ Links Per Month</strong></p>
-
-                                        <ul>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Average DR 50-90 Links
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Authority Links Included
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Target Page Planning
-                                            </li>
-
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Anchor Text Optimization
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Competitor Backlink Gap Analysis
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Keyword Analysis
-                                            </li>
-
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Custom Reporting Dashboard
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div className='mt-10'>
-                                    <button class="button-three capitalize py-1.5 px-4 !font-semibold flex items-center justify-center w-full">📞 Book a call</button>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div className='h-full'>
-                            <div className='bg-[#00DA90] lg:pt-16 lg:pb-12 pt-10 pb-8 relative rounded-3xl px-6 shadow-2xl h-full flex flex-col justify-between lg:px-8'>
-                                <div>
-                                    <h3 className="tracking-tight mb-1 text-md md:text-lg xl:text-xl text-medium">
-                                        💪 Growth
-                                    </h3>
-
-                                    <div className="inline-flex items-end">
-                                        <p>
-                                            <span className="text-2xl md:text-3xl xl:text-4xl green-highlight tracking-tighter font-semibold bg-transparent leading-tight">
-                                                $9999
-                                            </span>
-                                            <span className="ml-2 text-gray-700 ">
-                                                / Month
-                                            </span>
-                                        </p>
-                                    </div>
-
-                                    <div className='w-full border-t border-black border-opacity-20 pt-5 mt-5 mb-10"'>
-                                        <p className="block mb-4 text-xl pb-4 text-gray-900 font-normal"><strong>🔗 27+ Links Per Month</strong></p>
-
-                                        <ul>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Average DR 50-90 Links
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Can spread across multiple domains
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Authority Links Included
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Target Page Planning
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Anchor Text Optimization
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Competitor Backlink Gap Analysis
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Keyword Analysis
-                                            </li>
-
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Custom Reporting Dashboard
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Internal Linking Optimization
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Toxic Backlink Audit
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div className='mt-10'>
-                                    <button class="button-two capitalize py-1.5 px-4 !font-semibold flex items-center justify-center w-full">📞 Book a call</button>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div className='py-10'>
-                            <div className='bg-white lg:pt-16 lg:pb-12 pt-10 pb-8 relative rounded-3xl px-6 shadow-2xl h-full flex flex-col justify-between lg:px-8'>
-                                <div>
-                                    <h3 className="tracking-tight mb-1 text-md md:text-lg xl:text-xl text-medium">
-                                        🌍 Enterprise
-                                    </h3>
-
-                                    <div className="inline-flex items-end">
-                                        <p>
-                                            <span className="text-2xl md:text-3xl xl:text-4xl green-highlight tracking-tighter font-semibold bg-transparent leading-tight">
-                                                $19,999
-                                            </span>
-                                            <span className="ml-2 text-gray-700 ">
-                                                / Month
-                                            </span>
-                                        </p>
-                                    </div>
-
-                                    <div className='w-full border-t border-black border-opacity-20 pt-5 mt-5 mb-10"'>
-                                        <p className="block mb-4 text-xl pb-4 text-gray-900 font-normal"><strong>🔗 58+ Links Per Month</strong></p>
-
-                                        <ul>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Average DR 50-90 Links
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Can spread across multiple domains
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Authority Links Included
-                                            </li>
-
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Target Page Planning
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Anchor Text Optimization
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Competitor Backlink Gap Analysis
-                                            </li>
-
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Keyword Analysis
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Custom Reporting Dashboard
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Internal Linking Optimization
-                                            </li>
-
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Toxic Backlink Audit
-                                            </li>
-                                            <li className='flex items-center text-base font-semibold mb-2'>
-                                                <div className='rounded-full bg-black p-1 mr-4'>
-                                                    <FaCheck className='text-sm text-white' />
-                                                </div>
-
-                                                Anytime Call Scheduling with Our Founder
-                                            </li>
-
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div className='mt-10'>
-                                    <button class="button-three capitalize py-1.5 px-4 !font-semibold flex items-center justify-center w-full">📞 Book a call</button>
-                                </div>
-
-                            </div>
-                        </div>
+                            ))
+                        }
 
                     </div>
                 </div>

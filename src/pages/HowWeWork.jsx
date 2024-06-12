@@ -36,7 +36,7 @@ const HowWeWork = () => {
       <div className='container mx-auto px-8'>
 
 
-        <div className='grid grid-cols-2 mb-20'>
+        <div className='grid md:grid-cols-2 mb-20'>
           <div className='flex justify-center items-start'>
             <h2 class="mb-10 text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl tracking-tighter font-medium !leading-normal	 green-highlight">
               <strong className='inline-block font-medium px-3 relative'>Strategy</strong> Development</h2>
@@ -58,7 +58,7 @@ const HowWeWork = () => {
           </div>
         </div>
 
-        <div className='grid grid-cols-2 mb-20'>
+        <div className='grid md:grid-cols-2 mb-20'>
           <div className='flex justify-center items-start'>
             <h2 class="mb-10 text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl tracking-tighter font-medium !leading-normal	 green-highlight">
               <strong className='inline-block font-medium px-3 relative'>Prospecting</strong> Targets</h2>
@@ -80,7 +80,7 @@ const HowWeWork = () => {
           </div>
         </div>
 
-        <div className='grid grid-cols-2 mb-20'>
+        <div className='grid md:grid-cols-2 mb-20'>
           <div className='flex justify-center items-start'>
             <h2 class="mb-10 text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl tracking-tighter font-medium !leading-normal	 green-highlight">
               <strong className='inline-block font-medium px-3 relative'>Outreach</strong> Strategy</h2>
@@ -102,7 +102,7 @@ const HowWeWork = () => {
           </div>
         </div>
 
-        <div className='grid grid-cols-2 mb-20'>
+        <div className='grid md:grid-cols-2 mb-20'>
           <div className='flex justify-center items-start'>
             <h2 class="mb-10 text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl tracking-tighter font-medium !leading-normal	 green-highlight">
               <strong className='inline-block font-medium px-3 relative'>Relationship</strong> Development</h2>
@@ -124,7 +124,7 @@ const HowWeWork = () => {
           </div>
         </div>
 
-        <div className='grid grid-cols-2 mb-20'>
+        <div className='grid md:grid-cols-2 mb-20'>
           <div className='flex justify-center items-start'>
             <h2 class="mb-10 text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl tracking-tighter font-medium !leading-normal	 green-highlight">
               <strong className='inline-block font-medium px-3 relative'>Deliver</strong> Results</h2>

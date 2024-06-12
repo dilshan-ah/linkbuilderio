@@ -9,6 +9,7 @@ import LinkBuildingBlog from '../pages/LinkBuildingBlog'
 import Contact from '../pages/Contact'
 import MeetTheTeam from '../pages/MeetTheTeam'
 import TeamDetails from '../pages/TeamDetails'
+import SingleBlog from '../pages/SingleBlog'
 
 const Router = () => {
   return (
@@ -19,6 +20,7 @@ const Router = () => {
         <Route path='/case-studies' element={<CaseStudies/>}/>
         <Route path='/pricing' element={<Pricing/>}/>
         <Route path='/linkbuilding-blog' element={<LinkBuildingBlog/>}/>
+        <Route path='/linkbuilding-blog/:id' element={<SingleBlog/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/meet-the-team' element={<MeetTheTeam/>}/>
         <Route path='/about/team-details' element={<TeamDetails/>}/>
