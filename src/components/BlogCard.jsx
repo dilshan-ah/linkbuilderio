@@ -6,7 +6,7 @@ const BlogCard = ({ blog }) => {
         <div className="card rounded-3xl bg-white">
             <figure>
                 <Link to={`/linkbuilding-blog/${blog?.id}`}>
-                    <img src={`http://127.0.0.1:8000/${blog?.thumbnail}`} alt="Shoes" />
+                    <img src={`https://panel.stylenestbd.com//${blog?.thumbnail}`} alt="Shoes" />
                 </Link>
             </figure>
             <div className="card-body">
